@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  background-image: linear-gradient(135deg, #ff7af5 10%, #513162 100%);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: thin solid #fafafa;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 50%;
+  background-color: #fff;
+  box-shadow: -3px 6px 26px -10px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: -3px 6px 26px -10px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -3px 6px 26px -10px rgba(0, 0, 0, 0.75);
+}
+.container input {
+  padding: 0.25rem;
+  border: thin solid #999999;
+}
+
+.container button {
+  width: 100%;
+  color: #fff;
+  background-color: blueviolet;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 6px;
+}
+.container p {
+  transition: font 300ms ease-out, letter-spacing 300ms ease-out;
+}
+
+.container a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  text-transform: uppercase;
+  animation: waviy 2s infinite;
+  animation-delay: 1s;
+}
+
+@keyframes waviy {
+  0%,
+  40%,
+  100% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-20px);
+  }
+}

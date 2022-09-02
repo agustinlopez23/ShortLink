@@ -1,7 +1,13 @@
 import type { LoaderArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
+import "../assets/css/app.css";
+import styles from "../assets/css/app.css";
+import type { LinksFunction } from "@remix-run/node";
 
+export const links: LinksFunction = () => {
+  return [{ rel: "stylesheet", href: styles }];
+};
 export async function loader({ request }: LoaderArgs) {
   const url = new URL(request.url);
   const errorParam = url.searchParams.get("error");
@@ -19,10 +25,11 @@ export default function Index() {
   const { error, success } = useLoaderData();
 
   return (
-    <div>
+    <div className="container">
       <h1>Acorta tu Url</h1>
       <form method="post" action="/url">
         <input
+          className="inputForms"
           type="text"
           name="original"
           id="original"
@@ -38,18 +45,19 @@ export default function Index() {
         </label>
 
         <input
+          className="inputForms"
           type="text"
           name="short"
           id="short"
           placeholder="Coloca aqui la version corta, solo el nombre"
         />
-        <button type="submit">Acortar</button>
+        <button type="submit" className="inputForms">
+          Acortar
+        </button>
       </form>
       {success && (
-        <p className="success">
-          {" "}
-          Listo! tu URL acortada es{""}!
-          <a href={`/${success}`}>{`${success}`}</a>
+        <p>
+          Listo! tu URL acortada es! <a href={`/${success}`}>{` ${success}`}</a>
         </p>
       )}
     </div>

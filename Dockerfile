@@ -20,7 +20,7 @@ COPY package*.json .
 RUN npm install
 
 COPY . .
-# nitamos inicializar prisma
+# necesitamos inicializar prisma
 RUN npx prisma generate
 
 RUN npm run build
